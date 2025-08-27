@@ -32,10 +32,8 @@ require:
   - $(this-folder)/../../readme.azure.noprofile.md
 input-file:
 # You need to specify your swagger files here.
-  # - $(repo)/specification/cdn/resource-manager/Microsoft.Cdn/stable/2025-04-15/afdx.json
-  # - $(repo)/specification/cdn/resource-manager/Microsoft.Cdn/stable/2025-04-15/cdn.json
-  - C:\Users\jingnanxu\source\repos\0501-p\specification\cdn\resource-manager\Microsoft.Cdn\preview\2025-05-01-preview\afdx.json
-  - C:\Users\jingnanxu\source\repos\0501-p\specification\cdn\resource-manager\Microsoft.Cdn\preview\2025-05-01-preview\cdn.json
+  - $(repo)/specification/cdn/resource-manager/Microsoft.Cdn/preview/2025-05-01-preview/afdx.json
+  - $(repo)/specification/cdn/resource-manager/Microsoft.Cdn/preview/2025-05-01-preview/cdn.json
 # If the swagger has not been put in the repo, you may uncomment the following line and refer to it locally
 # - (this-folder)/relative-path-to-your-swagger 
 
@@ -44,7 +42,7 @@ module-version: 0.1.0
 # Normally, title is the service name
 title: Cdn
 subject-prefix: $(service-name)
-commit: 0cdef1ef00cf9020967dc099a67366d5a2c51d29
+commit: 9dcf0e13ae13d5b5abbdcd7429272412975300a3
 
 # If there are post APIs for some kinds of actions in the RP, you may need to 
 # uncomment following line to support viaIdentity for these post APIs
@@ -463,7 +461,7 @@ directive:
           "default": {
             "description": "CDN error response describing why the operation failed.",
             "schema": {
-              "$ref": "../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
+              "$ref": "../../../../../common-types/resource-management/v6/types.json#/definitions/ErrorResponse"
             }
           }
       }
