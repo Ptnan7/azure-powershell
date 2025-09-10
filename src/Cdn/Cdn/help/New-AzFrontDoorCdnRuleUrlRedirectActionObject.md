@@ -24,18 +24,27 @@ Create an in-memory object for UrlRedirectAction.
 
 ## EXAMPLES
 
-### Example 1: Create an in-memory object for UrlRedirectAction
+### Example 1: {{ Add title here }}
 ```powershell
-New-AzFrontDoorCdnRuleUrlRedirectActionObject -Name UrlRedirect -ParameterRedirectType Moved -ParameterDestinationProtocol MatchRequest
+{{ Add code here }}
 ```
 
 ```output
-Name
-----
-UrlRedirect
+{{ Add output here (remove the output block if the example doesn't have an output) }}
 ```
 
-Create an in-memory object for UrlRedirectAction
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+{{ Add code here }}
+```
+
+```output
+{{ Add output here (remove the output block if the example doesn't have an output) }}
+```
+
+{{ Add description here }}
 
 ## PARAMETERS
 

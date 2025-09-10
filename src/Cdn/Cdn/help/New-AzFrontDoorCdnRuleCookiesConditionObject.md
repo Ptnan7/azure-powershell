@@ -23,18 +23,27 @@ Create an in-memory object for DeliveryRuleCookiesCondition.
 
 ## EXAMPLES
 
-### Example 1: Create an in-memory object for DeliveryRuleCookiesCondition
+### Example 1: {{ Add title here }}
 ```powershell
-New-AzFrontDoorCdnRuleCookiesConditionObject -Name Cookies -ParameterOperator Equal -ParameterSelector test -ParameterMatchValue test -ParameterNegateCondition $False -ParameterTransform Lowercase
+{{ Add code here }}
 ```
 
 ```output
-Name
-----
-Cookies
+{{ Add output here (remove the output block if the example doesn't have an output) }}
 ```
 
-Create an in-memory object for DeliveryRuleCookiesCondition
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+{{ Add code here }}
+```
+
+```output
+{{ Add output here (remove the output block if the example doesn't have an output) }}
+```
+
+{{ Add description here }}
 
 ## PARAMETERS
 

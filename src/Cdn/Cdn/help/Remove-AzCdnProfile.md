@@ -32,19 +32,27 @@ Deleting a profile will result in the deletion of all of the sub-resources inclu
 
 ## EXAMPLES
 
-### Example 1: Delete an AzureCDN profile under the resource group
+### Example 1: {{ Add title here }}
 ```powershell
-Remove-AzCdnProfile -ResourceGroupName testps-rg-da16jm -Name cdn-001
+{{ Add code here }}
 ```
 
-Delete an AzureCDN profile under the resource group
-
-### Example 2: Delete an AzureCDN profile under the resource group via identity
-```powershell
-Get-AzCdnProfile -ResourceGroupName testps-rg-da16jm -Name fdp-cdn001 | Remove-AzCdnProfile
+```output
+{{ Add output here (remove the output block if the example doesn't have an output) }}
 ```
 
-Delete an AzureCDN profile under the resource group
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+{{ Add code here }}
+```
+
+```output
+{{ Add output here (remove the output block if the example doesn't have an output) }}
+```
+
+{{ Add description here }}
 
 ## PARAMETERS
 
