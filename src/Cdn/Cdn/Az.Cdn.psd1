@@ -51,16 +51,16 @@ DotNetFrameworkVersion = '4.7.2'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'Az.Accounts'; ModuleVersion = '5.0.0'; })
+RequiredModules = @(@{ModuleName = 'Az.Accounts'; ModuleVersion = '5.0.2'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'Cdn.Autorest/bin/Az.Cdn.private.dll'
 
 # Script files (.ps1) that are run in the caller's environment prior to importing this module.
-# ScriptsToProcess = @()
+ScriptsToProcess = @()
 
 # Type files (.ps1xml) to be loaded when importing this module
-# TypesToProcess = @()
+TypesToProcess = @()
 
 # Format files (.ps1xml) to be loaded when importing this module
 FormatsToProcess = 'Cdn.Autorest/Az.Cdn.format.ps1xml'
@@ -69,13 +69,15 @@ FormatsToProcess = 'Cdn.Autorest/Az.Cdn.format.ps1xml'
 NestedModules = @('Cdn.Autorest/Az.Cdn.psm1')
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = 'Clear-AzCdnEndpointContent', 'Clear-AzFrontDoorCdnEndpointContent', 
+FunctionsToExport = 'Approve-AzCdnDeploymentVersion', 'Clear-AzCdnEndpointContent', 
+               'Clear-AzFrontDoorCdnEndpointContent', 
+               'Compare-AzCdnDeploymentVersion', 
                'Disable-AzCdnCustomDomainCustomHttps', 
                'Enable-AzCdnCustomDomainCustomHttps', 
                'Enable-AzFrontDoorCdnProfileMigration', 'Get-AzCdnCustomDomain', 
-               'Get-AzCdnEdgeNode', 'Get-AzCdnEndpoint', 
-               'Get-AzCdnEndpointResourceUsage', 'Get-AzCdnOrigin', 
-               'Get-AzCdnOriginGroup', 'Get-AzCdnProfile', 
+               'Get-AzCdnDeploymentVersion', 'Get-AzCdnEdgeNode', 
+               'Get-AzCdnEndpoint', 'Get-AzCdnEndpointResourceUsage', 
+               'Get-AzCdnOrigin', 'Get-AzCdnOriginGroup', 'Get-AzCdnProfile', 
                'Get-AzCdnProfileResourceUsage', 
                'Get-AzCdnProfileSupportedOptimizationType', 
                'Get-AzCdnSubscriptionResourceUsage', 
@@ -131,7 +133,6 @@ FunctionsToExport = 'Clear-AzCdnEndpointContent', 'Clear-AzFrontDoorCdnEndpointC
                'New-AzFrontDoorCdnOrigin', 'New-AzFrontDoorCdnOriginGroup', 
                'New-AzFrontDoorCdnOriginGroupHealthProbeSettingObject', 
                'New-AzFrontDoorCdnOriginGroupLoadBalancingSettingObject', 
-               'New-AzFrontDoorCdnProfile', 
                'New-AzFrontDoorCdnProfileChangeSkuWafMappingObject', 
                'New-AzFrontDoorCdnProfileLogScrubbingObject', 
                'New-AzFrontDoorCdnProfileScrubbingRulesObject', 
@@ -188,7 +189,8 @@ FunctionsToExport = 'Clear-AzCdnEndpointContent', 'Clear-AzFrontDoorCdnEndpointC
                'Test-AzFrontDoorCdnEndpointCustomDomain', 
                'Test-AzFrontDoorCdnEndpointNameAvailability', 
                'Test-AzFrontDoorCdnProfileHostNameAvailability', 
-               'Test-AzFrontDoorCdnProfileMigration', 'Update-AzCdnEndpoint', 
+               'Test-AzFrontDoorCdnProfileMigration', 
+               'Update-AzCdnDeploymentVersion', 'Update-AzCdnEndpoint', 
                'Update-AzCdnOrigin', 'Update-AzCdnOriginGroup', 
                'Update-AzCdnProfile', 'Update-AzFrontDoorCdnCustomDomain', 
                'Update-AzFrontDoorCdnCustomDomainValidationToken', 
@@ -196,18 +198,16 @@ FunctionsToExport = 'Clear-AzCdnEndpointContent', 'Clear-AzFrontDoorCdnEndpointC
                'Update-AzFrontDoorCdnOriginGroup', 'Update-AzFrontDoorCdnProfile', 
                'Update-AzFrontDoorCdnProfileSku', 'Update-AzFrontDoorCdnRoute', 
                'Update-AzFrontDoorCdnRule', 'Update-AzFrontDoorCdnSecret', 
-               'Update-AzFrontDoorCdnSecurityPolicy', 
-               'Approve-AzCdnDeploymentVersion', 'Compare-AzCdnDeploymentVersion', 
-               'Get-AzCdnDeploymentVersion', 'Update-AzCdnDeploymentVersion'
+               'Update-AzFrontDoorCdnSecurityPolicy'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = @()
 
 # Variables to export from this module
-VariablesToExport = '*'
+# VariablesToExport = @()
 
 # Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
-AliasesToExport = '*'
+AliasesToExport = @()
 
 # DSC resources to export from this module
 # DscResourcesToExport = @()
