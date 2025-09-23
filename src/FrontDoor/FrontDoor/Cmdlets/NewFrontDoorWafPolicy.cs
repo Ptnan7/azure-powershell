@@ -26,6 +26,7 @@ using System.Text;
 using System.Collections;
 using System.Collections.Generic;
 using Microsoft.Azure.Management.FrontDoor.Models;
+using System.Runtime.InteropServices;
 
 namespace Microsoft.Azure.Commands.FrontDoor.Cmdlets
 {
@@ -74,6 +75,12 @@ namespace Microsoft.Azure.Commands.FrontDoor.Cmdlets
         /// </summary>
         [Parameter(Mandatory = false, HelpMessage = "Managed rules inside the policy")]
         public PSManagedRule[] ManagedRule { get; set; }
+
+        /// <summary>
+        /// Managed rule set exception list for the policy
+        /// </summary>
+        [Parameter(Mandatory = false, HelpMessage = "Managed rule set exception list for the policy")]
+        public PSManagedRuleSetException[] RuleSetException { get; set; }
 
         /// <summary>
         /// Redirect URL used for redirect actions
@@ -164,7 +171,11 @@ namespace Microsoft.Azure.Commands.FrontDoor.Cmdlets
                 },
                 ManagedRules = new Management.FrontDoor.Models.ManagedRuleSetList()
                 {
-                    ManagedRuleSets = ManagedRule?.ToList().Select(x => x.ToSdkAzManagedRule()).ToList()
+                    ManagedRuleSets = ManagedRule?.ToList().Select(x => x.ToSdkAzManagedRule()).ToList(),
+                    ExceptionList = RuleSetException?.Length > 0 ? new Management.FrontDoor.Models.ManagedRuleSetExceptionList
+                    {
+                        Exceptions = RuleSetException.Select(x => x.ToSdkManagedRuleSetException()).ToList()
+                    } : null
                 },
                 PolicySettings = new Management.FrontDoor.Models.PolicySettings
                 {
@@ -189,7 +200,7 @@ namespace Microsoft.Azure.Commands.FrontDoor.Cmdlets
             {
                 updateParameters.PolicySettings.JavascriptChallengeExpirationInMinutes = JavascriptChallengeExpirationInMinutes;
             }
-            
+
             if (CaptchaExpirationInMinutes != null)
             {
                 updateParameters.PolicySettings.CaptchaExpirationInMinutes = CaptchaExpirationInMinutes;

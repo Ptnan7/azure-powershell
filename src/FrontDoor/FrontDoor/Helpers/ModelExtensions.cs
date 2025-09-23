@@ -749,6 +749,54 @@ namespace Microsoft.Azure.Commands.FrontDoor.Helpers
             };
         }
 
+        public static Management.FrontDoor.Models.ManagedRuleSetExceptionList ToSdkManagedRuleSetExceptionList(this PSManagedRuleSetExceptionList psExceptionList)
+        {
+            return new Management.FrontDoor.Models.ManagedRuleSetExceptionList
+            {
+                Exceptions = psExceptionList?.Exceptions?.Select(x => x.ToSdkManagedRuleSetException()).ToList()
+            };
+        }
+
+        public static Management.FrontDoor.Models.ManagedRuleSetException ToSdkManagedRuleSetException(this PSManagedRuleSetException psException)
+        {
+            return new Management.FrontDoor.Models.ManagedRuleSetException
+            {
+                MatchVariable = psException.MatchVariable,
+                SelectorMatchOperator = psException.SelectorMatchOperator,
+                Selector = psException.Selector,
+                ValueMatchOperator = psException.ValueMatchOperator,
+                MatchValues = psException.MatchValues,
+                Scopes = psException.RuleSetScopes?.Select(x => x.ToSdkManagedRuleSetScope()).ToList()
+            };
+        }
+
+        public static Management.FrontDoor.Models.ManagedRuleSetScope ToSdkManagedRuleSetScope(this PSManagedRuleSetScope psScope)
+        {
+            return new Management.FrontDoor.Models.ManagedRuleSetScope
+            {
+                RuleSetType = psScope.RuleSetType,
+                RuleSetVersion = psScope.RuleSetVersion,
+                RuleGroupScopes = psScope.RuleGroupScopes?.Select(x => x.ToSdkRuleGroupScope()).ToList()
+            };
+        }
+
+        public static Management.FrontDoor.Models.RuleGroupScope ToSdkRuleGroupScope(this PSRuleGroupScope psRuleGroupScope)
+        {
+            return new Management.FrontDoor.Models.RuleGroupScope
+            {
+                RuleGroupName = psRuleGroupScope.RuleGroupName,
+                RuleScopes = psRuleGroupScope.RuleScopes?.Select(x => x.ToSdkRuleScope()).ToList()
+            };
+        }
+
+        public static Management.FrontDoor.Models.RuleScope ToSdkRuleScope(this PSRuleScope psRuleScope)
+        {
+            return new Management.FrontDoor.Models.RuleScope
+            {
+                RuleId = psRuleScope.RuleId
+            };
+        }
+
         public static SdkLogScrubbingSetting ToSdkLogScrubbingSetting(this PSFrontDoorWafLogScrubbingSetting psFrontDoorWafLogScrubbingSetting)
         {
             return new SdkLogScrubbingSetting 

@@ -10,10 +10,14 @@ autorest --use:@autorest/powershell@4.x
 
 commit: f11631f1c1057d8363f9e3f9597c73b90f8924c8
 input-file:
-  - https://github.com/Azure/azure-rest-api-specs/blob/$(commit)//specification/frontdoor/resource-manager/Microsoft.Network/stable/2025-03-01/network.json
-  - https://github.com/Azure/azure-rest-api-specs/blob/$(commit)//specification/frontdoor/resource-manager/Microsoft.Network/stable/2025-03-01/webapplicationfirewall.json
-  - https://github.com/Azure/azure-rest-api-specs/blob/$(commit)//specification/frontdoor/resource-manager/Microsoft.Network/stable/2021-06-01/frontdoor.json
-  - https://github.com/Azure/azure-rest-api-specs/blob/$(commit)//specification/frontdoor/resource-manager/Microsoft.Network/stable/2019-11-01/networkexperiment.json
+  # - https://github.com/Azure/azure-rest-api-specs/blob/$(commit)//specification/frontdoor/resource-manager/Microsoft.Network/stable/2025-03-01/network.json
+  # - https://github.com/Azure/azure-rest-api-specs/blob/$(commit)//specification/frontdoor/resource-manager/Microsoft.Network/stable/2025-03-01/webapplicationfirewall.json
+  # - https://github.com/Azure/azure-rest-api-specs/blob/$(commit)//specification/frontdoor/resource-manager/Microsoft.Network/stable/2021-06-01/frontdoor.json
+  # - https://github.com/Azure/azure-rest-api-specs/blob/$(commit)//specification/frontdoor/resource-manager/Microsoft.Network/stable/2019-11-01/networkexperiment.json
+  - "C:/Users/jingnanxu/source/repos/azure-rest-api-specs-pr/specification/frontdoor/resource-manager/Microsoft.Network/preview/2025-06-01-preview/frontdoor.json"
+  - "C:/Users/jingnanxu/source/repos/azure-rest-api-specs-pr/specification/frontdoor/resource-manager/Microsoft.Network/preview/2025-06-01-preview/webapplicationfirewall.json"
+  - "C:/Users/jingnanxu/source/repos/azure-rest-api-specs-pr/specification/frontdoor/resource-manager/Microsoft.Network/preview/2025-06-01-preview/network.json"
+  - "C:/Users/jingnanxu/source/repos/azure-rest-api-specs-pr/specification/frontdoor/resource-manager/Microsoft.Network/preview/2025-06-01-preview/networkexperiment.json"
 
 # csharp: true
 isSdkGenerator: true
