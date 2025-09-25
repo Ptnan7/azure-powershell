@@ -24,6 +24,8 @@ namespace Microsoft.Azure.Commands.FrontDoor.Models
 
         public string Action { get; set; }
 
+        public string Sensitivity { get; set; }
+
         public List<PSManagedRuleExclusion> Exclusions { get; set; }
     }
 }

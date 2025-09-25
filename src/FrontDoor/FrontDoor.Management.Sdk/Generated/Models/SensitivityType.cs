@@ -5,13 +5,15 @@ namespace Microsoft.Azure.Management.FrontDoor.Models
 {
 
     /// <summary>
-    /// Defines values for FrontDoorHealthProbeMethod.
+    /// Defines values for SensitivityType.
     /// </summary>
 
 
-    public static class FrontDoorHealthProbeMethod
+    public static class SensitivityType
     {
-        public const string GET = "GET";
-        public const string Head = "HEAD";
+        public const string None = "None";
+        public const string Low = "Low";
+        public const string Medium = "Medium";
+        public const string High = "High";
     }
 }

@@ -37,7 +37,7 @@ namespace Microsoft.Azure.Commands.FrontDoor.Cmdlets
         /// Override Action
         /// </summary>
         [Parameter(Mandatory = false, HelpMessage = "Override Action")]
-        [PSArgumentCompleter("Allow", "Block", "Log", "Redirect")]
+        [PSArgumentCompleter("Allow", "Block", "Log", "Redirect", "AnomalyScoring", "JSChallenge", "CAPTCHA")]
         public string Action { get; set; }
 
         /// <summary>
@@ -45,6 +45,13 @@ namespace Microsoft.Azure.Commands.FrontDoor.Cmdlets
         /// </summary>
         [Parameter(Mandatory = false, HelpMessage = "Disabled state")]
         public SwitchParameter Disabled { get; set; }
+
+        /// <summary>
+        /// Sensitivity
+        /// </summary>
+        [Parameter(Mandatory = false, HelpMessage = "Rule sensitivity level")]
+        [PSArgumentCompleter("None", "Low", "Medium", "High")]
+        public string Sensitivity { get; set; }
 
         /// <summary>
         /// Exclusions
@@ -59,6 +66,7 @@ namespace Microsoft.Azure.Commands.FrontDoor.Cmdlets
                 RuleId = RuleId,
                 Action = this.IsParameterBound(c => c.Action) ? Action : null,
                 EnabledState = (this.IsParameterBound(c => c.Disabled) && Disabled.IsPresent) ? PSEnabledState.Disabled : PSEnabledState.Enabled,
+                Sensitivity = this.IsParameterBound(c => c.Sensitivity) ? Sensitivity : null,
                 Exclusions = Exclusion?.ToList()
             };
             WriteObject(managedRuleOverride);

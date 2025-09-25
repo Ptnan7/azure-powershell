@@ -542,6 +542,7 @@ namespace Microsoft.Azure.Commands.FrontDoor.Helpers
                         Action = ruleOverride.Action,
                         EnabledState = ruleOverride.EnabledState == null ? (PSEnabledState?)null : (PSEnabledState)Enum.Parse(typeof(PSEnabledState), ruleOverride.EnabledState),
                         RuleId = ruleOverride.RuleId,
+                        Sensitivity = ruleOverride.Sensitivity,
                         Exclusions = ruleOverride.Exclusions?.Select(exclusion => exclusion.ToPSAzManagedRuleExclusion()).ToList()
                     };
                 }).ToList(),
@@ -671,6 +672,7 @@ namespace Microsoft.Azure.Commands.FrontDoor.Helpers
                         Action = ruleOverride.Action,
                         EnabledState = ruleOverride.EnabledState.HasValue ? ruleOverride.EnabledState.Value.ToString() : null,
                         RuleId = ruleOverride.RuleId,
+                        Sensitivity = ruleOverride.Sensitivity,
                         Exclusions = ruleOverride.Exclusions?.Select(x => x.ToSdkAzManagedRuleExclusion()).ToList()
                     };
                 }).ToList(),
