@@ -35,9 +35,12 @@ require:
 # If the swagger has not been put in the repo, you may uncomment the following line and refer to it locally
 input-file:
 # You need to specify your swagger files here.
-  - $(repo)/specification/frontdoor/resource-manager/Microsoft.Network/stable/2025-10-01/webapplicationfirewall.json
-  - $(repo)/specification/frontdoor/resource-manager/Microsoft.Network/stable/2025-10-01/network.json
-  - $(repo)/specification/frontdoor/resource-manager/Microsoft.Network/stable/2025-10-01/frontdoor.json
+  # - $(repo)/specification/frontdoor/resource-manager/Microsoft.Network/stable/2025-10-01/webapplicationfirewall.json
+  # - $(repo)/specification/frontdoor/resource-manager/Microsoft.Network/stable/2025-10-01/network.json
+  # - $(repo)/specification/frontdoor/resource-manager/Microsoft.Network/stable/2025-10-01/frontdoor.json
+  - "C:/Users/jingnanxu/source/repos/azure-rest-api-specs-exceptions-ddos/specification/frontdoor/resource-manager/Microsoft.Network/stable/2025-11-01/frontdoor.json"
+  - "C:/Users/jingnanxu/source/repos/azure-rest-api-specs-exceptions-ddos/specification/frontdoor/resource-manager/Microsoft.Network/stable/2025-11-01/network.json"
+  - "C:/Users/jingnanxu/source/repos/azure-rest-api-specs-exceptions-ddos/specification/frontdoor/resource-manager/Microsoft.Network/stable/2025-11-01/webapplicationfirewall.json"
 
 try-require: 
   - $(repo)/specification/xxx/resource-manager/readme.powershell.md
